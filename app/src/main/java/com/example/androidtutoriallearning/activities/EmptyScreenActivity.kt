@@ -1,4 +1,4 @@
-package com.example.androidtutoriallearning
+package com.example.androidtutoriallearning.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

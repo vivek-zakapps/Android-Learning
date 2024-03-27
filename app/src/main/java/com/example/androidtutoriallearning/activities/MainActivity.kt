@@ -1,4 +1,4 @@
-package com.example.androidtutoriallearning
+package com.example.androidtutoriallearning.activities
 
 // imported for mutableStateOf
 // -----------------------------------------
