@@ -137,7 +137,7 @@ fun ColoredContainer(image:String, title:String) {
             }
         }
     }
-}
+
 
 
 @Composable
