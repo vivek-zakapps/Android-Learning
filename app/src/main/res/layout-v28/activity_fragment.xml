@@ -12,7 +12,7 @@
         android:id="@+id/btnFragment1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="88dp"
         android:text="@string/fragment_1"
         app:layout_constraintEnd_toStartOf="@+id/btnFragment2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,7 +23,7 @@
         android:id="@+id/btnFragment2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="96dp"
         android:text="@string/fragment_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -32,19 +32,26 @@
 
     <FrameLayout
         android:id="@+id/flFragment"
-        android:layout_width="368dp"
-        android:layout_height="605dp"
+        android:layout_width="364dp"
+        android:layout_height="543dp"
         android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Toolbar
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:outlineSpotShadowColor="@color/black"/>
     </FrameLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        app:title="Fragments"
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

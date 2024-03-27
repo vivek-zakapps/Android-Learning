@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
                        
                        Spacer(modifier = Modifier.padding(20.dp))
 
-                       // Bottom nav bar
+                       // Fragments
                        FilledTonalButton(
                            onClick = {
                                val intent = Intent(this@MainActivity, FragmentActivity::class.java)
@@ -61,6 +61,20 @@ class MainActivity : ComponentActivity() {
                        ) {
                            Text(text = "Fragment Activity", fontWeight = FontWeight.Bold,)
                        }
+
+                       Spacer(modifier = Modifier.padding(20.dp))
+
+                       FilledTonalButton(
+                           onClick = {
+                               val intent = Intent(this@MainActivity, SmithsAppUiActivity::class.java)
+                               startActivity(intent)
+                           },
+                           modifier = Modifier.width(300.dp),
+                       ) {
+                           Text(text = "Smiths App", fontWeight = FontWeight.Bold,)
+                       }
+
+
 
 
                    }
