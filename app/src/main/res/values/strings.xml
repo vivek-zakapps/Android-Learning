@@ -2,4 +2,7 @@
     <string name="app_name">AndroidTutorial Learning</string>
     <string name="title_activity_screen_two">screen_two</string>
     <string name="heyWow">heyWow</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
+
 </resources>
