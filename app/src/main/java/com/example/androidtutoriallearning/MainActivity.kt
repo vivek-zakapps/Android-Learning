@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.FilledTonalButton
@@ -27,7 +26,6 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.example.androidtutoriallearning.ui.theme.AndroidTutorialLearningTheme
 
@@ -45,34 +43,17 @@ class MainActivity : ComponentActivity() {
                        verticalArrangement= Arrangement.Center,
                        horizontalAlignment=  CenterHorizontally,
                    ){
-                       Text(
-                           text = "Activity 1 / Main Activity",
-                           color = Color.Blue,
-                           fontWeight = FontWeight.Bold,
-                           modifier =  Modifier.align(alignment = Alignment.CenterHorizontally )
 
-                       )
-                       Spacer(modifier = Modifier.padding(20.dp))
-                       var text by remember {
-                           mutableStateOf(value="")
-                       }
-                       OutlinedTextField(
-                           value = text,
-                           onValueChange = {text= it},
-                           modifier =  Modifier.align(alignment = Alignment.CenterHorizontally ),
-                           )
-                       Spacer(modifier = Modifier.padding(10.dp))
+
+
                        FilledTonalButton(
-
                            onClick = {
-                               val intent = Intent(this@MainActivity, MainActivity2::class.java)
-                               intent.putExtra("data",text)
+                               val intent = Intent(this@MainActivity, TextFieldActivity::class.java)
                                startActivity(intent)
                            },
-
                            modifier = Modifier.width(300.dp),
                        ) {
-                           Text(text = "Send", fontWeight = FontWeight.Bold,)
+                           Text(text = "Text Field", fontWeight = FontWeight.Bold,)
                        }
                    }
                 }
