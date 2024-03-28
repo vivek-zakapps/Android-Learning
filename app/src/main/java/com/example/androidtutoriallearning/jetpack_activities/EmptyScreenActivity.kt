@@ -1,4 +1,4 @@
-package com.example.androidtutoriallearning.activities
+package com.example.androidtutoriallearning.jetpack_activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

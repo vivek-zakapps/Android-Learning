@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,19 +15,22 @@
         android:theme="@style/Theme.AndroidTutorialLearning"
         tools:targetApi="31">
         <activity
-            android:name=".activities.SmithsAppUiActivity"
+            android:name=".xml_activities.SmithsXMLUi"
             android:exported="false" />
         <activity
-            android:name=".activities.FragmentActivity"
+            android:name=".jetpack_activities.SmithsAppUiActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.TextFieldActivity"
+            android:name=".jetpack_activities.FragmentActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.EmptyScreenActivity"
+            android:name=".jetpack_activities.TextFieldActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".jetpack_activities.EmptyScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jetpack_activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
