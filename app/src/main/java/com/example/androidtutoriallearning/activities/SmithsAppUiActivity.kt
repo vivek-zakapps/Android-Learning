@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -125,18 +127,38 @@ fun ColoredContainer(image:String, title:String) {
             )
         }
         else{
-            // TODO: Stack IMages
-            AsyncImage(
-                modifier = Modifier.fillMaxSize(),
-                model = image,
-                placeholder = painterResource(id = R.drawable.ic_launcher_background),
-                error = painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = "image",
-                contentScale = ContentScale.FillBounds,
-            )
+            Box(modifier = Modifier.size(100.dp)) {
+                // Background image
+                AsyncImage(
+                    modifier = Modifier.matchParentSize(),
+                    model = image,
+                    placeholder = painterResource(id = R.drawable.ic_launcher_background),
+                    error = painterResource(id = R.drawable.ic_launcher_background),
+                    contentDescription = title,
+                    contentScale = ContentScale.FillBounds,
+                )
+
+                // Foreground badge icon
+                Row(Modifier.matchParentSize()
+                ) {
+                    repeat(4) { index ->
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                            contentDescription = "Badge Icon",
+                            modifier = Modifier
+                                .size(60.dp)  // Set the size of the badge
+                                .offset(30.dp, (-20).dp) // Adjust the position of each badge
+                        )
+                    }
+                }
             }
+
         }
     }
+}
+
+
+
 
 
 
