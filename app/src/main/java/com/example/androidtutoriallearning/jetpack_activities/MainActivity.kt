@@ -111,10 +111,7 @@ fun BuildSmithUiButton() {
                     onClick = {
 
                         expanded = false // Close the dropdown menu
-<<<<<<< HEAD
 
-=======
->>>>>>> 563f6476f1ab864fd946a7bdbf6424e41c6a8b6d
                         val screen =
                             if (label == "XML")
                                 SmithsXMLUi::class.java
