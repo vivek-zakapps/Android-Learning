@@ -22,9 +22,9 @@ class SmithsXMLUi : AppCompatActivity() {
         setContentView(R.layout.activity_smiths_xml_ui)
 
 
-        val smithLogoView = findViewById<ImageView>(R.id.smith_image);
-        val smithUrl = getString(R.string.smiths_network_image);
-        loadWithGlide(this, smithLogoView,smithUrl)
+//        val smithLogoView = findViewById<ImageView>(R.id.smith_image);
+//        val smithUrl = getString(R.string.smiths_network_image);
+//        loadWithGlide(this, smithLogoView,smithUrl)
 
 //        var ll_dynamic_images = findViewById<LinearLayout>(R.id.ll_dynamic_images)
 //        for (i in 0 until 2){
@@ -38,27 +38,27 @@ class SmithsXMLUi : AppCompatActivity() {
 //        }
 
 
-        // Nfc Image
-        val nfcView = findViewById<ImageView>(R.id.nfc_logo);
-        val nfcUrl = getString(R.string.nfc_network_image);
-        loadWithGlide(this, nfcView,nfcUrl)
-
-
-        // Qr Code Image
-        val qrView = findViewById<ImageView>(R.id.qr_logo);
-        val qrUrl = getString(R.string.qr_network_image);
-        loadWithGlide(this, qrView,qrUrl)
-
-        //  Pin number Image
-        val pinView = findViewById<ImageView>(R.id.pic_number_logo);
-        val pinUrl = getString(R.string.key_pad_network_image);
-        loadWithGlide(this, pinView,pinUrl)
-
-
-        // Id card logo
-        val idView = findViewById<ImageView>(R.id.id_card_logo);
-        val idUrl = getString(R.string.id_card_network_image);
-        loadWithGlide(this, idView,idUrl)
+//        // Nfc Image
+//        val nfcView = findViewById<ImageView>(R.id.nfc_logo);
+//        val nfcUrl = getString(R.string.nfc_network_image);
+//        loadWithGlide(this, nfcView,nfcUrl)
+//
+//
+//        // Qr Code Image
+//        val qrView = findViewById<ImageView>(R.id.qr_logo);
+//        val qrUrl = getString(R.string.qr_network_image);
+//        loadWithGlide(this, qrView,qrUrl)
+//
+//        //  Pin number Image
+//        val pinView = findViewById<ImageView>(R.id.pic_number_logo);
+//        val pinUrl = getString(R.string.key_pad_network_image);
+//        loadWithGlide(this, pinView,pinUrl)
+//
+//
+//        // Id card logo
+//        val idView = findViewById<ImageView>(R.id.id_card_logo);
+//        val idUrl = getString(R.string.id_card_network_image);
+//        loadWithGlide(this, idView,idUrl)
 
 
 
