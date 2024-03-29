@@ -35,8 +35,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intent = Intent(this@MainActivity,SmithsXMLUi::class.java)
-        startActivity(intent)
         setContent {
             AndroidTutorialLearningTheme {
                 // A surface container using the 'background' color from the theme
@@ -113,7 +111,10 @@ fun BuildSmithUiButton() {
                     onClick = {
 
                         expanded = false // Close the dropdown menu
+<<<<<<< HEAD
 
+=======
+>>>>>>> 563f6476f1ab864fd946a7bdbf6424e41c6a8b6d
                         val screen =
                             if (label == "XML")
                                 SmithsXMLUi::class.java

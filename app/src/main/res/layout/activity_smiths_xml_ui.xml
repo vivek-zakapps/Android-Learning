@@ -5,172 +5,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:background="@color/blue"
-    android:gravity="start"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".xml_activities.SmithsXMLUi">
 
 
+    <ImageView
+        android:id="@+id/smiths_logo_image"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/smiths_logo">
+    </ImageView>
 
-    <LinearLayout
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/loading_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/smith_image"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
-            android:contentDescription="@string/smiths_logo"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
-
-        <!--  logos  -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:id="@+id/nfc_ll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/nfc_logo"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginEnd="25dp"
-                    android:contentDescription="@string/smiths_logo"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal|bottom"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="20dp"
-                    android:text="Mobile NFC"
-
-                    android:textSize="16sp"
-                    app:fontWeight="1000" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/qr_logo"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginEnd="25dp"
-                    android:contentDescription="@string/smiths_logo"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:gravity="center_horizontal|bottom"
-                    android:paddingStart="40dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="40dp"
-                    android:text="Qr Pass"
-                    android:textFontWeight="900"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/id_card_logo"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginEnd="25dp"
-                    android:contentDescription="@string/smiths_logo"
-                    android:textFontWeight="900"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:textSize="16sp"
-                    android:gravity="center_horizontal|bottom"
-                    android:textFontWeight="900"
-                    android:text="ID Pass" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/pic_number_logo"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="80dp"
-                    android:contentDescription="@string/smiths_logo"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textSize="16sp"
-                    android:gravity="center_horizontal|bottom"
-                    android:textFontWeight="900"
-                    android:text="Password" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/rectangle_outline_button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/custom_outline_button_background"
-        android:text="Click Me"
-        android:textColor="@android:color/white"
-        android:textSize="20sp" />
-
-
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </RelativeLayout>
