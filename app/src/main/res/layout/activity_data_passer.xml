@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="start"
     android:orientation="vertical"
-    tools:context=".xml_activities.ListViewActivityXML">
+    tools:context=".xml_activities.DataPasserXmlActivity">
 
     <LinearLayout
         android:id="@+id/llLinearLayout"

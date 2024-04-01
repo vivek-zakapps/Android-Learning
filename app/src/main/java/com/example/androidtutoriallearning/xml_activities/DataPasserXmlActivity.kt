@@ -4,53 +4,60 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.classes.FirstFragmentClass
 import com.example.androidtutoriallearning.classes.SecondFragmentClass
-import com.example.androidtutoriallearning.fragments.SecondFragment
-import com.example.androidtutoriallearning.interfaces.ListviewInterface
+import com.example.androidtutoriallearning.interfaces.DataPasserInterface
 import kotlin.random.Random
 
-class ListViewActivityXML : AppCompatActivity(), ListviewInterface {
+class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
 
-        setContentView(R.layout.activity_list_view)
+        setContentView(R.layout.activity_data_passer)
 
 
-//        val data = Random.nextInt(1000, 10000).toString();
-//        val fragmentOne = FirstFragmentClass.newInstance("data", data)
-//        replaceFragment(fragmentOne)
+        val data = Random.nextInt(1000, 10000).toString();
+        val fragmentOne = FirstFragmentClass.newInstance("data", data)
+        replaceFragment(fragmentOne)
 
 
-        val clicked: Boolean = true;
 
-//        if (clicked){
-            findViewById<Button>(R.id.lv_fragment_1_btn).setOnClickListener {
-                val data = Random.nextInt(1000, 10000).toString();
-                replaceFragment(FirstFragmentClass.newInstance("data", data))
-            }
-//        }else{
-//            onDataPassed("returned")
-//        }
-
-
-        findViewById<Button>(R.id.lv_fragment_2_btn).setOnClickListener {
-            val data = Random.nextInt(1000, 10000).toString();
-            println((data))
-            replaceFragment(SecondFragmentClass.newInstance("data", data))
-        }
+        listenLvButton2(null);
+        listenLVButton2(null)
 
 
     }
+
+
+    private fun listenLVButton2(initialData: Any?) {
+        var data = initialData
+        findViewById<Button>(R.id.lv_fragment_2_btn).setOnClickListener {
+            if (data == null) {
+                data = Random.nextInt(1000, 10000).toString();
+            }
+            println((data))
+            replaceFragment(SecondFragmentClass.newInstance("data", data.toString()))
+        }
+    }
+
+
+
+
+    private fun listenLvButton2(initialData: Any?){
+        var data = initialData;
+        findViewById<Button>(R.id.lv_fragment_1_btn).setOnClickListener {
+            if (data == null) {
+                data = Random.nextInt(1000, 10000).toString();
+            }
+            replaceFragment(FirstFragmentClass.newInstance("data", data.toString()))
+        }
+    }
+
 
     // Replace fragment
     private fun replaceFragment(fragment: Fragment) {
@@ -62,11 +69,10 @@ class ListViewActivityXML : AppCompatActivity(), ListviewInterface {
     }
 
     override fun onDataPassed(data: String) {
-
         Log.d("MainActivity", "Data received from fragment: $data return ++++")
-        val view:TextView = findViewById(R.id.fragment_1_text)
-        view.text=data;
+        listenLVButton2("Data from fragment 1 : $data")
     }
+
 
     @SuppressLint("MissingSuperCall")
     override fun onBackPressed() {

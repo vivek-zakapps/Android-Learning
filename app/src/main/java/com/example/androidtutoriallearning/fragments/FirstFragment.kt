@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.androidtutoriallearning.R
-import com.example.androidtutoriallearning.interfaces.ListviewInterface
+import com.example.androidtutoriallearning.interfaces.DataPasserInterface
 
 
 /**
@@ -17,11 +17,10 @@ import com.example.androidtutoriallearning.interfaces.ListviewInterface
 open class FirstFragment : Fragment(R.layout.fragment_first) {
 
 
-    private var lvInterface: ListviewInterface? = null
+    private var lvInterface: DataPasserInterface? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,18 +29,21 @@ open class FirstFragment : Fragment(R.layout.fragment_first) {
         val data = arguments?.getString("data")
         first.text = data
 
+        // Notify data has passed
+        lvInterface?.onDataPassed(data.toString())
+
     }
 
 
     override fun onStart() {
         super.onStart()
-        lvInterface?.onDataPassed("Returned" ?: "")
+//        lvInterface?.onDataPassed("Returned" ?: "")
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
-            lvInterface = context as ListviewInterface
+            lvInterface = context as DataPasserInterface
 
         } catch (c: ClassCastException) {
             throw ClassCastException("$context must implement DataPassListener")

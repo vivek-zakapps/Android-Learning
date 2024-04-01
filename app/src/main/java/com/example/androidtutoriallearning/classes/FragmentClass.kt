@@ -20,7 +20,7 @@ class FirstFragmentClass: FirstFragment() {
 
 class SecondFragmentClass: SecondFragment() {
     companion object{
-        fun newInstance(key: String,data: String):SecondFragmentClass{
+        fun newInstance(key: String, data: String):SecondFragmentClass{
             val fragment = SecondFragmentClass();
             val argument = Bundle();
             argument.putString(key, data)
