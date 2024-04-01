@@ -29,12 +29,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.androidtutoriallearning.ui.theme.AndroidTutorialLearningTheme
+import com.example.androidtutoriallearning.xml_activities.ListViewActivityXML
 import com.example.androidtutoriallearning.xml_activities.SmithsXMLUi
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
+
         setContent {
             AndroidTutorialLearningTheme {
                 // A surface container using the 'background' color from the theme
@@ -77,6 +81,17 @@ class MainActivity : ComponentActivity() {
 
                         Spacer(modifier = Modifier.padding(20.dp))
                         BuildSmithUiButton()
+
+                        Spacer(modifier = Modifier.padding(20.dp))
+                        FilledTonalButton(
+                            onClick = {
+                                val intent= Intent(this@MainActivity, ListViewActivityXML::class.java)
+                                startActivity(intent)
+                            },
+                            modifier = Modifier.width(300.dp),
+                        ) {
+                            Text(text = "Fragment Data Pass/ Listview", fontWeight = FontWeight.Bold)
+                        }
                     }
                 }
             }

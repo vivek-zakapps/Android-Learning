@@ -9,18 +9,48 @@
     android:orientation="vertical"
     tools:context=".xml_activities.ListViewActivityXML">
 
+    <LinearLayout
+        android:id="@+id/llLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-   <com.google.android.material.appbar.AppBarLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/lv_fragments"
+            android:layout_width="match_parent"
+            android:layout_height="596dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp" />
 
-       <androidx.appcompat.widget.Toolbar
-           android:id="@+id/toolbar"
-           app:title="Listview"
-           android:layout_width="match_parent"
-           android:layout_height="?attr/actionBarSize"
-           android:background="?attr/colorPrimary"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-   </com.google.android.material.appbar.AppBarLayout>
+            <Button
+                android:id="@+id/lv_fragment_1_btn"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="0dp"
+                android:text="Fragment 1" />
+
+            <Button
+                android:id="@+id/lv_fragment_2_btn"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="0dp"
+                android:text="Fragment 2" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>
