@@ -19,5 +19,6 @@ open class SecondFragment : Fragment(R.layout.fragment_second) {
         val first: TextView = view.findViewById(R.id.fragment_2_text)
         val data = arguments?.getString("data")
         first.text = data
+
     }
 }

@@ -29,7 +29,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.androidtutoriallearning.ui.theme.AndroidTutorialLearningTheme
-import com.example.androidtutoriallearning.xml_activities.ListViewActivityXML
+import com.example.androidtutoriallearning.xml_activities.DataPasserXmlActivity
+import com.example.androidtutoriallearning.xml_activities.RecyclerViewXmlPractice
 import com.example.androidtutoriallearning.xml_activities.SmithsXMLUi
 
 class MainActivity : ComponentActivity() {
@@ -85,12 +86,23 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.padding(20.dp))
                         FilledTonalButton(
                             onClick = {
-                                val intent= Intent(this@MainActivity, ListViewActivityXML::class.java)
+                                val intent= Intent(this@MainActivity, DataPasserXmlActivity::class.java)
                                 startActivity(intent)
                             },
                             modifier = Modifier.width(300.dp),
                         ) {
                             Text(text = "Fragment Data Pass/ Listview", fontWeight = FontWeight.Bold)
+                        }
+
+                        Spacer(modifier = Modifier.padding(20.dp))
+                        FilledTonalButton(
+                            onClick = {
+                                val intent = Intent(this@MainActivity, RecyclerViewXmlPractice::class.java)
+                                startActivity(intent)
+                            },
+                            modifier = Modifier.width(300.dp),
+                        ) {
+                            Text(text = "Recycler View", fontWeight = FontWeight.Bold)
                         }
                     }
                 }

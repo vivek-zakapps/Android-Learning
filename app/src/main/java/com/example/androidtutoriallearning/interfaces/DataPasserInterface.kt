@@ -1,5 +1,5 @@
 package com.example.androidtutoriallearning.interfaces
 
-interface ListviewInterface {
+interface DataPasserInterface {
     fun onDataPassed(data: String)
 }
