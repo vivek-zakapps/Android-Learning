@@ -27,8 +27,18 @@ class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
 
 
 
-        listenLvButton2(null);
-        listenLVButton2(null)
+        findViewById<Button>(R.id.lv_fragment_2_btn).setOnClickListener {
+
+            val data = Random.nextInt(1000, 10000).toString();
+
+            println((data))
+            replaceFragment(SecondFragmentClass.newInstance("data", data.toString()))
+        }
+
+        findViewById<Button>(R.id.lv_fragment_1_btn).setOnClickListener {
+            val data = Random.nextInt(1000, 10000).toString();
+            replaceFragment(FirstFragmentClass.newInstance("data", data.toString()))
+        }
 
 
     }
@@ -46,9 +56,7 @@ class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
     }
 
 
-
-
-    private fun listenLvButton2(initialData: Any?){
+    private fun listenLvButton2(initialData: Any?) {
         var data = initialData;
         findViewById<Button>(R.id.lv_fragment_1_btn).setOnClickListener {
             if (data == null) {
