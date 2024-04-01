@@ -51,4 +51,17 @@ open class FirstFragment : Fragment(R.layout.fragment_first) {
         }
     }
 
+
+
+    private fun onclickListener() {
+        button?.setOnClickListener {
+            lvInterface?.onDataPassed("Hello Fragment 1")
+        }
+    }
+
+
+    fun getDataFromActivity(msg: String) {
+        first?.text = msg
+    }
+
 }
