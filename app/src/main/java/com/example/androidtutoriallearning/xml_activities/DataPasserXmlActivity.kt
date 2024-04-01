@@ -13,6 +13,10 @@ import com.example.androidtutoriallearning.interfaces.DataPasserInterface
 import kotlin.random.Random
 
 class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
+
+    var d = 0;
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,48 +25,48 @@ class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
         setContentView(R.layout.activity_data_passer)
 
 
-        val data = Random.nextInt(1000, 10000).toString();
-        val fragmentOne = FirstFragmentClass.newInstance("data", data)
+        d =0;
+        val fragmentOne = FirstFragmentClass.newInstance("data", d)
         replaceFragment(fragmentOne)
 
 
-
         findViewById<Button>(R.id.lv_fragment_2_btn).setOnClickListener {
 
-            val data = Random.nextInt(1000, 10000).toString();
-
-            println((data))
-            replaceFragment(SecondFragmentClass.newInstance("data", data.toString()))
+            println("In activity btn 2")
+            replaceFragment(SecondFragmentClass.newInstance("data", d))
         }
 
         findViewById<Button>(R.id.lv_fragment_1_btn).setOnClickListener {
-            val data = Random.nextInt(1000, 10000).toString();
-            replaceFragment(FirstFragmentClass.newInstance("data", data.toString()))
+            replaceFragment(FirstFragmentClass.newInstance("data", d))
         }
 
 
     }
 
 
-    private fun listenLVButton2(initialData: Any?) {
+
+
+
+    private fun listenLVButton2(initialData: Int?) {
         var data = initialData
         findViewById<Button>(R.id.lv_fragment_2_btn).setOnClickListener {
-            if (data == null) {
-                data = Random.nextInt(1000, 10000).toString();
-            }
-            println((data))
-            replaceFragment(SecondFragmentClass.newInstance("data", data.toString()))
+            data = (data ?: 0) + 1
+            this.d = data!!
+            println("BUTTON @ 2 CLICKED => $d")
+            replaceFragment(SecondFragmentClass.newInstance("data", data!!))
         }
     }
 
 
-    private fun listenLvButton2(initialData: Any?) {
+    private fun listenLvButton1(initialData: Int?) {
         var data = initialData;
         findViewById<Button>(R.id.lv_fragment_1_btn).setOnClickListener {
-            if (data == null) {
-                data = Random.nextInt(1000, 10000).toString();
-            }
-            replaceFragment(FirstFragmentClass.newInstance("data", data.toString()))
+            // Increment the data value
+            data = (data ?: 0) + 1
+            this.d = data!!
+
+            println("BUTTON @ 1 CLICKED => $data")
+            replaceFragment(FirstFragmentClass.newInstance("data", data!!))
         }
     }
 
@@ -76,9 +80,16 @@ class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
         }
     }
 
-    override fun onDataPassed(data: String) {
+    override fun onDataPassed(data: Int?, fragment: String) {
         Log.d("MainActivity", "Data received from fragment: $data return ++++")
-        listenLVButton2("Data from fragment 1 : $data")
+        if (fragment.toString().contains("FirstFragment")) {
+           println("lll - 1")
+            listenLvButton1(data)
+        } else {
+            println("lll - 2")
+            listenLVButton2(data)
+        }
+
     }
 
 

@@ -3,13 +3,11 @@ package com.example.androidtutoriallearning.xml_activities
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidtutoriallearning.R
-import com.example.androidtutoriallearning.classes.RecycleItemsViewModel
-import com.example.androidtutoriallearning.kotline_files.CustomAdapter
+import com.example.androidtutoriallearning.Adaptors.CustomAdapter
+import com.example.androidtutoriallearning.models.ItemsViewModel
 
 class RecyclerViewXmlPractice : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,16 +17,21 @@ class RecyclerViewXmlPractice : AppCompatActivity() {
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
 
         // this creates a vertical layout Manager
-        recyclerview.layoutManager = LinearLayoutManager(this)
+        /*
+        * If you want to make the scroll horizontally then
+        *   recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+        *
+        * */
+        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
 
 
         // ArrayList of class ItemsViewModel
-        val data = ArrayList<RecycleItemsViewModel>()
+        val data = ArrayList<ItemsViewModel>()
 
         // This loop will create 20 Views containing
         // the image with the count of view
         for (i in 1..20) {
-            data.add(RecycleItemsViewModel(R.drawable.person, "Item $i"))
+            data.add(ItemsViewModel(R.drawable.person, "Item $i"))
         }
 
 

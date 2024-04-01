@@ -1,12 +1,12 @@
 package com.example.androidtutoriallearning.jetpack_activities
 
+import SecondFragment
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.fragments.FirstFragment
-import com.example.androidtutoriallearning.fragments.SecondFragment
 
 class FragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

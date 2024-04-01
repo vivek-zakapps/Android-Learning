@@ -26,18 +26,17 @@ open class FirstFragment : Fragment(R.layout.fragment_first) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val first: TextView = view.findViewById(R.id.fragment_1_text)
-        val data = arguments?.getString("data")
-        first.text = data
+        val data = arguments?.getInt("data")
+        first.text = data.toString()
 
         // Notify data has passed
-        lvInterface?.onDataPassed(data.toString())
+        lvInterface?.onDataPassed(data, "FirstFragment")
 
     }
 
 
     override fun onStart() {
         super.onStart()
-//        lvInterface?.onDataPassed("Returned" ?: "")
     }
 
     override fun onAttach(context: Context) {
