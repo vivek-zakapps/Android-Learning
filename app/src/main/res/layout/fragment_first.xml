@@ -15,15 +15,28 @@
         android:layout_height="wrap_content"
         android:text="@string/fragment_1"
         android:textAlignment="center"
-        android:textSize="20.sp" />
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"
+        android:textSize="40.sp" />
 
 
     <Button
-        android:id="@+id/fragment_1_btn"
-        android:layout_width="wrap_content"
+        android:id="@+id/fr_btn_1"
+        android:layout_width="200.dp"
         android:layout_height="wrap_content"
-        android:text="Send"
-        android:textAlignment="center"
-        android:textSize="20.sp" />
+        android:background="@drawable/custom_outline_button_background"
+        android:text="GO"
+        android:textColor="@color/white">
+
+    </Button>
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/fragment_1_btn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Send"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="20.sp" />-->
 
 </LinearLayout>
