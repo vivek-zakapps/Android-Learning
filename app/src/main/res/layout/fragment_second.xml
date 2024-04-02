@@ -14,6 +14,19 @@
         android:layout_height="wrap_content"
         android:text="@string/fragment_2"
         android:textAlignment="center"
-        android:textSize="20sp"/>
+        android:textColor="@color/black"
+        android:textSize="50.sp"/>
+
+    <Button
+        android:id="@+id/fr_btn_2"
+        android:layout_width="200.dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_outline_button_background"
+        android:text="Back"
+        android:textColor="@color/white">
+
+    </Button>
+
+
 
 </LinearLayout>
