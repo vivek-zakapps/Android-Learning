@@ -34,7 +34,7 @@ class DataPasserXmlActivity : AppCompatActivity(), DataPasserInterface {
             supportFragmentManager.beginTransaction().apply {
                 println("replaceFragment Called")
                 replace(R.id.lv_fragments, fragment)
-                addToBackStack("fragment_transaction")
+                addToBackStack("TAG")
                 commit()
             }
         } catch (e: Exception) {

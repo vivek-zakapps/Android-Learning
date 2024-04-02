@@ -1,45 +1,67 @@
 package com.example.androidtutoriallearning.xml_activities
 
+import RecycleViewFragment
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidtutoriallearning.R
-import com.example.androidtutoriallearning.Adaptors.CustomAdapter
+import com.example.androidtutoriallearning.Adaptors.RecyclerCustomAdapter
+import com.example.androidtutoriallearning.fragments.RvDataEntryFragment
+import com.example.androidtutoriallearning.interfaces.RecyclerviewInterface
 import com.example.androidtutoriallearning.models.ItemsViewModel
+import com.example.androidtutoriallearning.view_model.RecyclerViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class RecyclerViewXmlPractice : AppCompatActivity() {
+class RecyclerViewXmlPractice : AppCompatActivity(), RecyclerviewInterface {
+
+    private lateinit var rvViewModel: RecyclerViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_recycler_view_xml_practice)
-        val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        rvViewModel = ViewModelProvider(this)[RecyclerViewModel::class.java]
 
-        // this creates a vertical layout Manager
-        /*
-        * If you want to make the scroll horizontally then
-        *   recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
-        *
-        * */
-        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+        val rvListView = RecycleViewFragment();
+        replaceFragmentView(rvListView)
+
+    }
 
 
-        // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
+    private fun replaceFragmentView(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.rv_fragment, fragment)
+            disallowAddToBackStack()
+            commit()
+        }
+    }
 
-        // This loop will create 20 Views containing
-        // the image with the count of view
-        for (i in 1..20) {
-            data.add(ItemsViewModel(R.drawable.person, "Item $i"))
+    override fun onEvent(event: String) {
+        when (event) {
+            "navigate_to_rv_data_entry_fr" -> {
+                replaceFragmentView(RvDataEntryFragment())
+            }
+
+            "data_added_to_rv_list" -> {
+                replaceFragmentView(RecycleViewFragment())
+            }
         }
 
-
-
-        // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapter(data)
-
-        // Setting the Adapter with the recyclerview
-        recyclerview.adapter = adapter
     }
+
+    override fun onDeleteButtonClick(id: Int) {
+        println("Delete button clicked $id")
+        rvViewModel.removeFromList(id)
+    }
+
+    override fun createDeleteButton(id: Int) {
+
+
+    }
+
+
 }
