@@ -9,11 +9,20 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/fragment_2_text"
+        android:id="@+id/fragment_1_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fragment_2"
+        android:text="@string/fragment_1"
         android:textAlignment="center"
-        android:textSize="20sp"/>
+        android:textSize="20.sp" />
+
+
+    <Button
+        android:id="@+id/fr_btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textSize="20.sp" />
 
 </LinearLayout>

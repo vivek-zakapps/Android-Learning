@@ -1,10 +1,13 @@
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.interfaces.DataPasserInterface
+import com.example.androidtutoriallearning.view_model.DataViewModel
 
 open class SecondFragment : Fragment(R.layout.fragment_second) {
 
@@ -17,13 +20,18 @@ open class SecondFragment : Fragment(R.layout.fragment_second) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val textView: TextView = view.findViewById(R.id.fragment_2_text)
-        val arguments = requireArguments()
-        val data = arguments.getInt("data")
-        textView.text = data.toString()
+        // Initialize ViewModel
+        val viewModel = ViewModelProvider(requireActivity()).get(DataViewModel::class.java)
 
-        // Notify data has passed
-        lvInterface?.onDataPassed(data, "SecondFragment")
+        // Observe changes in textLiveData
+        viewModel.data.observe(viewLifecycleOwner) { newText ->
+            view.findViewById<TextView>(R.id.fragment_1_text)?.text = newText
+        }
+
+        val button = view.findViewById<Button>(R.id.fr_btn_2)
+        button.setOnClickListener {
+            lvInterface?.onDataPassed("SecondFragmentButtonPressed")
+        }
 
     }
 

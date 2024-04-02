@@ -24,31 +24,31 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:orientation="horizontal">-->
 
-            <Button
-                android:id="@+id/lv_fragment_1_btn"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="0dp"
-                android:text="Fragment 1" />
+<!--            <Button-->
+<!--                android:id="@+id/lv_fragment_1_btn"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="75dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:layout_marginVertical="0dp"-->
+<!--                android:text="Fragment 1" />-->
 
-            <Button
-                android:id="@+id/lv_fragment_2_btn"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="0dp"
-                android:text="Fragment 2" />
+<!--            <Button-->
+<!--                android:id="@+id/lv_fragment_2_btn"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="75dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:layout_marginVertical="0dp"-->
+<!--                android:text="Fragment 2" />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
     </LinearLayout>
