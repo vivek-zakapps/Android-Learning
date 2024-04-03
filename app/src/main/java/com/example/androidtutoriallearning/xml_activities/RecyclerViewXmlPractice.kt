@@ -1,6 +1,7 @@
 package com.example.androidtutoriallearning.xml_activities
 
 import RecycleViewFragment
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.Adaptors.RecyclerCustomAdapter
+import com.example.androidtutoriallearning.classes.RvDataEntryFragmentClass
 import com.example.androidtutoriallearning.fragments.RvDataEntryFragment
+import com.example.androidtutoriallearning.fragments.RvUpdateDialogueFragment
 import com.example.androidtutoriallearning.interfaces.RecyclerviewInterface
+import com.example.androidtutoriallearning.jetpack_activities.EmptyScreenActivity
 import com.example.androidtutoriallearning.models.ItemsViewModel
 import com.example.androidtutoriallearning.view_model.RecyclerViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -58,7 +62,9 @@ class RecyclerViewXmlPractice : AppCompatActivity(), RecyclerviewInterface {
         rvViewModel.removeFromList(id)
     }
 
-    override fun createDeleteButton(id: Int) {
+    override fun onCardTilePress(position: Int) {
+        println("cloclccllclc")
+        RvUpdateDialogueFragment().show(supportFragmentManager, "GAME_DIALOG")
 
 
     }

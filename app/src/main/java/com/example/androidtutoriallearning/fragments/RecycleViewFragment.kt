@@ -13,8 +13,6 @@ import com.example.androidtutoriallearning.Adaptors.RecyclerCustomAdapter
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.interfaces.RecyclerviewInterface
 import com.example.androidtutoriallearning.view_model.RecyclerViewModel
-import com.example.androidtutoriallearning.view_model.RvDataModel
-import com.example.androidtutoriallearning.xml_activities.DataPasserXmlActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RecycleViewFragment : Fragment(R.layout.fragment_recycle_view) {
@@ -49,7 +47,6 @@ class RecycleViewFragment : Fragment(R.layout.fragment_recycle_view) {
         }
 
         listenFabButton(view)
-        listenToDeleteBtn(view);
     }
 
     override fun onAttach(context: Context) {
@@ -67,9 +64,5 @@ class RecycleViewFragment : Fragment(R.layout.fragment_recycle_view) {
         }
     }
 
-    private fun listenToDeleteBtn(view: View) {
 
-
-
-    }
 }
