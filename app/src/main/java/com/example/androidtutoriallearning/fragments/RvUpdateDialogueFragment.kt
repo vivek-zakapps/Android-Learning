@@ -61,7 +61,6 @@ class RvUpdateDialogueFragment : DialogFragment() {
         }
 
         btnCancel.setOnClickListener {
-
             dismiss()
         }
 
