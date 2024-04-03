@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="@color/white"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingHorizontal="0dp"
+    tools:context=".fragments.RvDataEntryFragment">
+
+
+    <EditText
+        android:id="@+id/rv_edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="vivek, spider man ..."
+        android:background="@drawable/text_field_style"
+        android:hint="Enter your data here..."
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey" />
+
+    <Button
+        android:id="@+id/rv_add_rv_data_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_outline_button_background"
+        android:text="Submit"
+        android:textColor="@color/white">
+
+    </Button>
+
+
+</LinearLayout>

@@ -20,7 +20,8 @@
             android:exported="false" />
         <activity
             android:name=".xml_activities.RecyclerViewXmlPractice"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".xml_activities.SmithsXMLUi"
             android:exported="false" />

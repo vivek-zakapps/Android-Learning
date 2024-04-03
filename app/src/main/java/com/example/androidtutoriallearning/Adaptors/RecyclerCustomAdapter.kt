@@ -3,25 +3,29 @@ package com.example.androidtutoriallearning.Adaptors
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidtutoriallearning.R
+import com.example.androidtutoriallearning.interfaces.RecyclerviewInterface
 import com.example.androidtutoriallearning.models.ItemsViewModel
+import com.example.androidtutoriallearning.view_model.RvDataModel
 
-class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class RecyclerCustomAdapter(private val mList: List<RvDataModel>) :
+    RecyclerView.Adapter<RecyclerCustomAdapter.ViewHolder>() {
 
-    // create new views
+    private var rvInterceptor: RecyclerviewInterface? = null
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
         // that is used to hold list item
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_view_design, parent, false)
-
+        rvInterceptor = parent.context as RecyclerviewInterface
         return ViewHolder(view)
     }
-
-
 
 
     // binds the list items to a view
@@ -33,7 +37,13 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
         holder.imageView.setImageResource(R.drawable.person)
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = ItemsViewModel.text
+        holder.textView.text = ItemsViewModel.name
+        holder.deleteBtn.text = position.toString()
+        holder.deleteBtn.id = 1000 + position;
+        holder.deleteBtn.setOnClickListener {
+            rvInterceptor?.onDeleteButtonClick(position)
+        }
+
 
     }
 
@@ -46,5 +56,7 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.card_imageview)
         val textView: TextView = itemView.findViewById(R.id.card_textView)
+        val deleteBtn: Button = itemView.findViewById(R.id.rv_delete_btn)
+
     }
 }
