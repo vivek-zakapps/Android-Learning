@@ -24,7 +24,7 @@
         android:id="@+id/fr_btn_1"
         android:layout_width="200.dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_outline_button_background"
+        android:background="@drawable/custom_filed_button_style"
         android:text="GO"
         android:textColor="@color/white">
 

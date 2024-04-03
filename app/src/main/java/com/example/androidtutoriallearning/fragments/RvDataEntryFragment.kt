@@ -9,13 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.compose.ui.text.toLowerCase
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.interfaces.RecyclerviewInterface
 import com.example.androidtutoriallearning.view_model.RecyclerViewModel
 import com.example.androidtutoriallearning.view_model.RvDataModel
+import java.util.Locale
 
-class RvDataEntryFragment : Fragment(R.layout.fragment_rv_data_entry) {
+open class RvDataEntryFragment : Fragment(R.layout.fragment_rv_data_entry) {
 
 
     private var rvInterceptor: RecyclerviewInterface? = null
@@ -28,7 +30,11 @@ class RvDataEntryFragment : Fragment(R.layout.fragment_rv_data_entry) {
 
 
 
+
         val submitButton = view.findViewById<Button>(R.id.rv_add_rv_data_btn)
+
+
+
         submitButton.setOnClickListener {
             val editTextView = view.findViewById<EditText>(R.id.rv_edit_Text)
             println("Textyrtyr : ${editTextView.text.toString()}")

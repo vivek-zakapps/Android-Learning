@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.interfaces.RecyclerviewInterface
-import com.example.androidtutoriallearning.models.ItemsViewModel
 import com.example.androidtutoriallearning.view_model.RvDataModel
 
 class RecyclerCustomAdapter(private val mList: List<RvDataModel>) :
@@ -18,12 +18,15 @@ class RecyclerCustomAdapter(private val mList: List<RvDataModel>) :
     private var rvInterceptor: RecyclerviewInterface? = null
 
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
         // that is used to hold list item
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_view_design, parent, false)
         rvInterceptor = parent.context as RecyclerviewInterface
+
         return ViewHolder(view)
     }
 
@@ -39,11 +42,12 @@ class RecyclerCustomAdapter(private val mList: List<RvDataModel>) :
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.name
         holder.deleteBtn.text = position.toString()
-        holder.deleteBtn.id = 1000 + position;
         holder.deleteBtn.setOnClickListener {
             rvInterceptor?.onDeleteButtonClick(position)
         }
-
+        holder.dataTile.setOnClickListener {
+            rvInterceptor?.onCardTilePress(position)
+        }
 
     }
 
@@ -57,6 +61,7 @@ class RecyclerCustomAdapter(private val mList: List<RvDataModel>) :
         val imageView: ImageView = itemView.findViewById(R.id.card_imageview)
         val textView: TextView = itemView.findViewById(R.id.card_textView)
         val deleteBtn: Button = itemView.findViewById(R.id.rv_delete_btn)
+        val dataTile: CardView = itemView.findViewById(R.id.rv_card_tile)
 
     }
 }
