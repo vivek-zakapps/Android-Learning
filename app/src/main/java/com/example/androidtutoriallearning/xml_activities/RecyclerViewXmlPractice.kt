@@ -64,7 +64,8 @@ class RecyclerViewXmlPractice : AppCompatActivity(), RecyclerviewInterface {
 
     override fun onCardTilePress(position: Int) {
         println("cloclccllclc")
-        RvUpdateDialogueFragment().show(supportFragmentManager, "GAME_DIALOG")
+        val dialogFragment = RvUpdateDialogueFragment.newInstance(position)
+        dialogFragment.show(supportFragmentManager, "GAME_DIALOG")
 
 
     }
