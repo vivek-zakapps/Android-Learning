@@ -66,9 +66,10 @@ class RecyclerViewXmlPractice : AppCompatActivity(), RecyclerviewInterface {
         println("cloclccllclc")
         val dialogFragment = RvUpdateDialogueFragment.newInstance(position)
         dialogFragment.show(supportFragmentManager, "GAME_DIALOG")
-
-
     }
+
+
+
 
 
 }

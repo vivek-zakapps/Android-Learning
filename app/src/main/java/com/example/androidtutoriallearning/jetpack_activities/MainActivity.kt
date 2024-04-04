@@ -1,7 +1,7 @@
 package com.example.androidtutoriallearning.jetpack_activities
 
 // imported for mutableStateOf
-// -----------------------------------------
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -30,7 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.androidtutoriallearning.ui.theme.AndroidTutorialLearningTheme
 import com.example.androidtutoriallearning.xml_activities.DataPasserXmlActivity
-import com.example.androidtutoriallearning.xml_activities.RecyclerViewXmlPractice
+import com.example.androidtutoriallearning.xml_activities.IntuitXmlActivity
 import com.example.androidtutoriallearning.xml_activities.SmithsXMLUi
 
 class MainActivity : ComponentActivity() {
@@ -86,28 +86,67 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.padding(20.dp))
                         FilledTonalButton(
                             onClick = {
-                                val intent= Intent(this@MainActivity, DataPasserXmlActivity::class.java)
+                                val intent =
+                                    Intent(this@MainActivity, DataPasserXmlActivity::class.java)
                                 startActivity(intent)
                             },
                             modifier = Modifier.width(300.dp),
                         ) {
-                            Text(text = "Fragment Data Pass/ Listview", fontWeight = FontWeight.Bold)
+                            Text(
+                                text = "Fragment Data Pass/ Listview",
+                                fontWeight = FontWeight.Bold
+                            )
                         }
 
                         Spacer(modifier = Modifier.padding(20.dp))
                         FilledTonalButton(
                             onClick = {
-                                val intent = Intent(this@MainActivity, RecyclerViewXmlPractice::class.java)
+                                val intent =
+                                    Intent(this@MainActivity, LazyListJetPackActivity::class.java)
                                 startActivity(intent)
                             },
                             modifier = Modifier.width(300.dp),
                         ) {
                             Text(text = "Recycler View", fontWeight = FontWeight.Bold)
                         }
+
+
+
+                        FiledBtn(
+                            onClick = {
+                                val intent =
+                                    Intent(this@MainActivity, IntuitXmlActivity::class.java)
+                                startActivity(intent)
+                            },
+                            title = "Intuit UI",
+                            Modifier,
+                        )
+                        FiledBtn(
+                            onClick = {
+                                val intent =
+                                    Intent(this@MainActivity, Material3ThemActivity::class.java)
+                                startActivity(intent)
+                            },
+                            title = "Material#3 Theam",
+                            Modifier,
+                        )
                     }
                 }
             }
         }
+    }
+
+}
+
+
+@Composable
+fun FiledBtn(onClick: () -> Unit, title: String,modifier: Modifier) {
+    Spacer(modifier = modifier.padding(20.dp))
+    FilledTonalButton(
+        onClick = onClick,
+        modifier = Modifier.width(300.dp),
+    ) {
+        Text(text = title, fontWeight = FontWeight.Bold)
     }
 }
 
@@ -145,9 +184,9 @@ fun BuildSmithUiButton() {
                             else
                                 SmithsAppUiActivity::class.java
 
-                            val intent = Intent(context,screen)
-                            intent.putExtra("screen", label)
-                            context.startActivity(intent)
+                        val intent = Intent(context, screen)
+                        intent.putExtra("screen", label)
+                        context.startActivity(intent)
 
 
                     }
