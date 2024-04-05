@@ -67,6 +67,8 @@ dependencies {
     implementation ("com.intuit.sdp:sdp-android:1.0.6")
     implementation ("androidx.compose.material3:material3-window-size-class:1.0.0-alpha12")
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
