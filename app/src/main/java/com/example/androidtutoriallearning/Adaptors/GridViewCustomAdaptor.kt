@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.androidtutoriallearning.R
 import com.example.androidtutoriallearning.models.ItemsViewModel
 
-
+// create a branch
 class GridViewCustomAdaptorAdapter(context: Context, courseModelArrayList: ArrayList<ItemsViewModel>) :
     ArrayAdapter<ItemsViewModel?>(context,0 ) {
 
