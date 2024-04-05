@@ -36,6 +36,9 @@ import com.example.androidtutoriallearning.xml_activities.RecyclerViewXmlPractic
 import com.example.androidtutoriallearning.xml_activities.SmithsXMLUi
 import com.example.androidtutoriallearning.xml_activities.UIChallenge
 
+
+
+// Start
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
