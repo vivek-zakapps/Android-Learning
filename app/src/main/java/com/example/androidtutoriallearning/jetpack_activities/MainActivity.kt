@@ -31,7 +31,10 @@ import androidx.compose.ui.unit.dp
 import com.example.androidtutoriallearning.ui.theme.AndroidTutorialLearningTheme
 import com.example.androidtutoriallearning.xml_activities.DataPasserXmlActivity
 import com.example.androidtutoriallearning.xml_activities.IntuitXmlActivity
+import com.example.androidtutoriallearning.xml_activities.Material3XmlActivity
+import com.example.androidtutoriallearning.xml_activities.RecyclerViewXmlPractice
 import com.example.androidtutoriallearning.xml_activities.SmithsXMLUi
+import com.example.androidtutoriallearning.xml_activities.UIChallenge
 
 class MainActivity : ComponentActivity() {
 
@@ -102,7 +105,7 @@ class MainActivity : ComponentActivity() {
                         FilledTonalButton(
                             onClick = {
                                 val intent =
-                                    Intent(this@MainActivity, LazyListJetPackActivity::class.java)
+                                    Intent(this@MainActivity, RecyclerViewXmlPractice::class.java)
                                 startActivity(intent)
                             },
                             modifier = Modifier.width(300.dp),
@@ -124,11 +127,22 @@ class MainActivity : ComponentActivity() {
                         FiledBtn(
                             onClick = {
                                 val intent =
-                                    Intent(this@MainActivity, Material3ThemActivity::class.java)
+                                    Intent(this@MainActivity, Material3XmlActivity::class.java)
                                 startActivity(intent)
                             },
                             title = "Material#3 Theam",
                             Modifier,
+                        )
+
+
+                        FiledBtn(
+                            onClick = {
+                                val intent =
+                                    Intent(this@MainActivity, UIChallenge::class.java)
+                                startActivity(intent)
+                            },
+                            title = "Ui practice",
+                            modifier= Modifier,
                         )
                     }
                 }

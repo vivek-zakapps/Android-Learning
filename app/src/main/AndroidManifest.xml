@@ -16,6 +16,13 @@
         android:theme="@style/Theme.AndroidTutorialLearning"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".xml_activities.Material3XmlActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyMl3Theme.white"/>
+        <activity
+            android:name=".xml_activities.UIChallenge"
+            android:exported="false" />
+        <activity
             android:name=".xml_activities.IntuitXmlActivity"
             android:exported="false" />
         <activity

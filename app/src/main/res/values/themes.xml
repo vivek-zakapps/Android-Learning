@@ -2,4 +2,20 @@
 <resources>
 
     <style name="Theme.AndroidTutorialLearning" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Theme.MyMl3Theme.white" parent="Theme.Material3.Light">
+        <item name="colorPrimary">@color/green_200</item>
+        <item name="colorPrimaryVariant">@color/green_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+    </style>
+
+    <style name="Theme.MyMl3Theme.Dark" parent="Theme.Material3.Dark">
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+    </style>
+
+
 </resources>
